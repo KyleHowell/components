@@ -1,6 +1,6 @@
-# react-redux
+# Components
 
-A boilerplate web application using React and Redux.
+Reusable components built with React
 
     npm install
     npm start
