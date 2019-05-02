@@ -1,15 +1,15 @@
-import React, {Component} from 'react';
-import PropTypes from 'prop-types';
-import {Message, Wrapper} from './Checkbox.styles';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { Message, Wrapper } from "./Checkbox.styles";
 
 class Checkbox extends Component {
   static propTypes = {
     checked: PropTypes.bool,
-    onChange: PropTypes.func,
+    onChange: PropTypes.func
   };
 
   render() {
-    const messageText = this.props.checked ? 'On' : 'Off';
+    const messageText = this.props.checked ? "On" : "Off";
     return (
       <Wrapper className="checkbox-component">
         <input

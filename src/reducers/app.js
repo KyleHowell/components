@@ -1,5 +1,5 @@
-import {handleActions} from 'redux-actions';
-import {setCheckbox} from '../actions/app';
+import { handleActions } from "redux-actions";
+import { setCheckbox } from "../actions/app";
 
 const initialState = {
   checked: false
