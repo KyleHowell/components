@@ -21,6 +21,7 @@
     "verbose": true,
     "testEnvironment": "node",
     "snapshotSerializers": [
+      "enzyme-to-json/serializer",
       "jest-emotion/serializer"
     ]
   },
@@ -36,6 +37,7 @@
     "babel-plugin-emotion": "^9.2.6",
     "enzyme": "^3.9.0",
     "enzyme-adapter-react-16": "^1.12.1",
+    "enzyme-to-json": "^3.3.5",
     "eslint": "^5.16.0",
     "eslint-plugin-react": "^7.12.4",
     "jest": "^24.7.1",

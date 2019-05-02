@@ -1,5 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Checkbox Component renders correctly when checked 1`] = `ShallowWrapper {}`;
+exports[`Checkbox Component renders correctly when checked 1`] = `
+<Styled(div)
+  className="checkbox-component"
+>
+  <input
+    checked={true}
+    type="checkbox"
+  />
+  <Styled(div)
+    on={true}
+  >
+    On
+  </Styled(div)>
+</Styled(div)>
+`;
 
-exports[`Checkbox Component renders correctly when unchecked 1`] = `ShallowWrapper {}`;
+exports[`Checkbox Component renders correctly when unchecked 1`] = `
+<Styled(div)
+  className="checkbox-component"
+>
+  <input
+    checked={false}
+    type="checkbox"
+  />
+  <Styled(div)
+    on={false}
+  >
+    Off
+  </Styled(div)>
+</Styled(div)>
+`;
