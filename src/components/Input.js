@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "@emotion/styled";
+import styled from "react-emotion";
 
 const Wrapper = styled.div`
   width: 140px;

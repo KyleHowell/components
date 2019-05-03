@@ -5,7 +5,6 @@ import * as emotion from "emotion";
 import { createSerializer, createMatchers } from "jest-emotion";
 
 import Checkbox from "./Checkbox";
-import { Message } from "./Checkbox.styles";
 
 expect.addSnapshotSerializer(createSerializer(emotion));
 expect.extend(createMatchers(emotion));
@@ -20,13 +19,5 @@ describe("Checkbox Component", () => {
   it("renders correctly when unchecked", () => {
     const tree = shallow(<Checkbox checked={false} />);
     expect(tree).toMatchSnapshot();
-  });
-  it("renders a green message when checked", () => {
-    const tree = shallow(<Message on />);
-    expect(tree).toHaveStyleRule("background-color", "green");
-  });
-  it("renders a red message when unchecked", () => {
-    const tree = shallow(<Message on={false} />);
-    expect(tree).toHaveStyleRule("background-color", "red");
   });
 });

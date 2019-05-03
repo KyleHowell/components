@@ -4,8 +4,8 @@ import { connect } from "react-redux";
 import { setCheckbox, setInput } from "../actions/app";
 import Checkbox from "../components/Checkbox";
 import Input from "../components/Input";
-import { Global, css } from "@emotion/core";
-import styled from "@emotion/styled";
+import styled from "react-emotion";
+import "./App.styles";
 
 const Row = styled.div`
   padding: 20px 0;
@@ -30,7 +30,6 @@ const mapStateToProps = state => ({
 class App extends Component {
   static propTypes = {
     checked: PropTypes.bool,
-    dispatch: PropTypes.function,
     inputValue: PropTypes.string
   };
 
@@ -45,18 +44,6 @@ class App extends Component {
   render() {
     return (
       <Wrapper>
-        <Global
-          styles={css`
-            html,
-            body {
-              padding: 0;
-              margin: 0;
-              background: white;
-              min-height: 100%;
-              font-family: Helvetica, Arial, sans-serif;
-            }
-          `}
-        />
         <Row>
           <Checkbox
             checked={this.props.checked}

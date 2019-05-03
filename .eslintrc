@@ -2,11 +2,6 @@
   "plugins": ["emotion", "react", "jest"],
   "parser": "babel-eslint",
   "extends": ["eslint:recommended", "plugin:react/recommended"],
-  "rules": {
-    "emotion/jsx-import": "error",
-    "emotion/import-from-emotion": "error",
-    "emotion/styled-import": "error"
-  },
   "settings": {
     "react": {
       "version": "latest"
