@@ -3,26 +3,21 @@ import PropTypes from "prop-types";
 import styled from "react-emotion";
 
 const Wrapper = styled.div`
-  width: 140px;
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
   text-align: center;
+  background-color: ${props => (props.checked ? "green" : "red")};
+  border-radius: 25%;
 `;
 
-const Message = styled.div`
-  font-size: 24px;
-  background-color: ${props => (props.on ? "green" : "red")};
-  color: ${props => (props.on ? "white" : "black")};
-  margin-top: 20px;
-`;
-
-const Checkbox = ({ checked, onChange }) => {
-  const messageText = checked ? "On" : "Off";
-  return (
-    <Wrapper className="checkbox-component">
-      <input type="checkbox" checked={checked} onChange={onChange} />
-      <Message on={checked}>{messageText}</Message>
-    </Wrapper>
-  );
-};
+const Checkbox = ({ checked, onChange }) => (
+  <Wrapper
+    checked={checked}
+    className="checkbox-component"
+    onClick={onChange}
+  />
+);
 
 Checkbox.propTypes = {
   checked: PropTypes.bool,

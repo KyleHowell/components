@@ -7,13 +7,11 @@ const Wrapper = styled.div`
   text-align: center;
 `;
 
-const Input = ({ value, onChange }) => {
-  return (
-    <Wrapper className="input-component">
-      <input type="text" onChange={onChange} value={value} />
-    </Wrapper>
-  );
-};
+const Input = ({ value, onChange }) => (
+  <Wrapper className="input-component">
+    <input type="text" onChange={onChange} value={value} />
+  </Wrapper>
+);
 
 Input.propTypes = {
   value: PropTypes.string,

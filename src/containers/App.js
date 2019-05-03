@@ -27,18 +27,31 @@ const mapStateToProps = state => ({
   inputValue: state.app.inputValue
 });
 
+const mapDispatchtoProps = dispatch => {
+  return {
+    setCheckbox: payload => {
+      dispatch(setCheckbox(payload));
+    },
+    setInput: payload => {
+      dispatch(setInput(payload));
+    }
+  };
+};
+
 class App extends Component {
   static propTypes = {
     checked: PropTypes.bool,
-    inputValue: PropTypes.string
+    inputValue: PropTypes.string,
+    setCheckbox: PropTypes.function,
+    setInput: PropTypes.function
   };
 
-  onCheckboxChange = e => {
-    this.props.dispatch(setCheckbox(e.target.checked));
+  onCheckboxChange = () => {
+    this.props.setCheckbox(!this.props.checked);
   };
 
   onInputChange = e => {
-    this.props.dispatch(setInput(e.target.value));
+    this.props.setInput(e.target.value);
   };
 
   render() {
@@ -58,4 +71,7 @@ class App extends Component {
   }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect(
+  mapStateToProps,
+  mapDispatchtoProps
+)(App);
