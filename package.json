@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --config ./webpack.config.js --mode development",
     "test": "jest",
-    "coverage": "jest --coverage"
+    "coverage": "jest --coverage",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -40,6 +41,8 @@
     "enzyme-adapter-react-16": "^1.12.1",
     "enzyme-to-json": "^3.3.5",
     "eslint": "^5.16.0",
+    "eslint-plugin-emotion": "^10.0.7",
+    "eslint-plugin-jest": "^22.5.1",
     "eslint-plugin-react": "^7.12.4",
     "jest": "^24.7.1",
     "jest-emotion": "^9.2.11",
@@ -52,13 +55,13 @@
     "webpack-dev-server": "^3.3.1"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.10",
+    "@emotion/styled": "^10.0.10",
     "core-js": "2.5.x",
-    "emotion": "^9.2.12",
     "fsa-redux-thunk": "^2.3.0",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-emotion": "^9.2.12",
     "react-redux": "^5.1.1",
     "redux": "^4.0.1",
     "redux-actions": "^2.6.5",
