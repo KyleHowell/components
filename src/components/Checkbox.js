@@ -1,26 +1,32 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Message, Wrapper } from "./Checkbox.styles";
+import styled from "react-emotion";
 
-class Checkbox extends Component {
-  static propTypes = {
-    checked: PropTypes.bool,
-    onChange: PropTypes.func
-  };
+const Wrapper = styled.div`
+  width: 140px;
+  text-align: center;
+`;
 
-  render() {
-    const messageText = this.props.checked ? "On" : "Off";
-    return (
-      <Wrapper className="checkbox-component">
-        <input
-          type="checkbox"
-          checked={this.props.checked}
-          onChange={this.props.onChange}
-        />
-        <Message on={this.props.checked}>{messageText}</Message>
-      </Wrapper>
-    );
-  }
-}
+const Message = styled.div`
+  font-size: 24px;
+  background-color: ${props => (props.on ? "green" : "red")};
+  color: ${props => (props.on ? "white" : "black")};
+  margin-top: 20px;
+`;
+
+const Checkbox = ({ checked, onChange }) => {
+  const messageText = checked ? "On" : "Off";
+  return (
+    <Wrapper className="checkbox-component">
+      <input type="checkbox" checked={checked} onChange={onChange} />
+      <Message on={checked}>{messageText}</Message>
+    </Wrapper>
+  );
+};
+
+Checkbox.propTypes = {
+  checked: PropTypes.bool,
+  onChange: PropTypes.func
+};
 
 export default Checkbox;

@@ -1,8 +1,9 @@
 import { handleActions } from "redux-actions";
-import { setCheckbox } from "../actions/app";
+import { setCheckbox, setInput } from "../actions/app";
 
 const initialState = {
-  checked: false
+  checked: false,
+  inputValue: "Text"
 };
 
 const appReducer = handleActions(
@@ -10,6 +11,10 @@ const appReducer = handleActions(
     [setCheckbox]: (state, action) => ({
       ...state,
       checked: action.payload
+    }),
+    [setInput]: (state, action) => ({
+      ...state,
+      inputValue: action.payload
     })
   },
   initialState
